@@ -3,7 +3,7 @@
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 
-import { client } from './apollo/client';
+import client from './apollo/client';
 
 import HomeScreenContainer from './components/HomeScreenContainer';
 

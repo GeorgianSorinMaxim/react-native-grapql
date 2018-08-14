@@ -1,10 +1,9 @@
 // @flow
 
 import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
 
 export const GET_DATA = gql`
-  query allPosts {
+  query data {
     posts {
       id
       title
@@ -15,5 +14,17 @@ export const GET_DATA = gql`
         lastName
       }
     }
+  }
+`;
+
+export const GET_VISIBILITY_FILTER = gql`
+  {
+    visibilityFilter @client
+  }
+`;
+
+export const updateVisbilityFilter = gql`
+  mutation updateVisbilityFilter($visibilityFilter: Boolean!) {
+    updateVisbilityFilter(visibilityFilter: $visibilityFilter) @client
   }
 `;
