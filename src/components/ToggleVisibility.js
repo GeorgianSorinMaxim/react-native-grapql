@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-native';
 import { graphql } from 'react-apollo';
 
-import { updateVisbilityFilter } from '../apollo/queries';
+import { updateListVisibility } from '../apollo/queries';
 
 type State = {
   visible: boolean
@@ -38,7 +38,7 @@ export class ToggleVisibility extends Component<Props, State> {
   }
 }
 
-const ToggleVisibilityWithMutation = graphql(updateVisbilityFilter)(
+const ToggleVisibilityWithMutation = graphql(updateListVisibility)(
   ToggleVisibility
 );
 

@@ -17,14 +17,14 @@ export const GET_DATA = gql`
   }
 `;
 
-export const GET_VISIBILITY_FILTER = gql`
+export const GET_LIST_VISIBILITY = gql`
   {
     visibilityFilter @client
   }
 `;
 
-export const updateVisbilityFilter = gql`
-  mutation updateVisbilityFilter($visibilityFilter: Boolean!) {
-    updateVisbilityFilter(visibilityFilter: $visibilityFilter) @client
+export const updateListVisibility = gql`
+  mutation updateListVisibility($visibilityFilter: Boolean!) {
+    updateListVisibility(visibilityFilter: $visibilityFilter) @client
   }
 `;

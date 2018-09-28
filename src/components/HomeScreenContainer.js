@@ -5,26 +5,26 @@ import { compose, graphql } from 'react-apollo';
 
 import HomeScreen from './HomeScreen';
 
-import { GET_VISIBILITY_FILTER, GET_DATA } from '../apollo/queries';
+import { GET_LIST_VISIBILITY, GET_DATA } from '../apollo/queries';
 
 type Props = {
   dataQuery: object,
-  visibilityQuery: object
+  appStateQuery: object
 };
 
-export const HomeScreenContainer = ({ dataQuery, visibilityQuery }: Props) =>
-  !dataQuery.loading && !visibilityQuery.loading ? (
+export const HomeScreenContainer = ({ dataQuery, appStateQuery }: Props) =>
+  !dataQuery.loading && !appStateQuery.loading ? (
     <HomeScreen
       data={dataQuery.posts}
       loading={dataQuery.loading}
       error={dataQuery.error}
-      visible={visibilityQuery.visibilityFilter}
+      visible={appStateQuery.visibilityFilter}
     />
   ) : null;
 
 export default compose(
-  graphql(GET_VISIBILITY_FILTER, {
-    name: 'visibilityQuery'
+  graphql(GET_LIST_VISIBILITY, {
+    name: 'appStateQuery'
   }),
   graphql(GET_DATA, {
     name: 'dataQuery'

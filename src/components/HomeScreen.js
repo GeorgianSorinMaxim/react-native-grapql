@@ -109,6 +109,8 @@ export class HomeScreen extends Component<Props, State> {
       Object.keys(this.props.data).length &&
       this.props.data.length === 0;
 
+    console.log(this.props);
+
     return (
       <View style={styles.container}>
         <View style={styles.content}>

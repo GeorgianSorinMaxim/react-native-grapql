@@ -20,7 +20,7 @@ const stateLink = withClientState({
   resolvers: {
     Mutation: {
       /* eslint-disable */
-      updateVisbilityFilter: (_, { visibilityFilter }, { cache }) => {
+      updateListVisibility: (_, { visibilityFilter }, { cache }) => {
         /* eslint-enabled */
         cache.writeData({ data: { visibilityFilter: visibilityFilter } });
         return cache;
